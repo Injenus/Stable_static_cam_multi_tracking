@@ -37,7 +37,7 @@ def build_flow():
 
     g.node("dedup", "Подавление дублей\nпо IoU >= dup_iou_thresh\nвыбор лучшего трека", shape="box")
 
-    g.node("out", "Выход\nтреки и маска использованных детекций", shape="box")
+    g.node("out", "Конец\nТреки и маска использованных детекций", shape="box")
 
     # --- Рёбра верхнего уровня ---
     g.edge("frame", "yolo")
