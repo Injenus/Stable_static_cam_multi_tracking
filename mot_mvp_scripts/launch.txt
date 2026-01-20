@@ -1,6 +1,6 @@
 for win10:
 
-pytho_tracker_motchallenge.py `
+python run_tracker_motchallenge.py `
 >>   --data "data\MOT20" `
 >>   --split train `
 >>   --tracker ".\object_tracker_pipeline.py" `

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run your YOLO+Kalman+ByteTrack(-ish)+optional ReID tracker on MOTChallenge image sequences.
+"""Run YOLO+Kalman+ByteTrack(-ish)+optional ReID tracker on MOTChallenge image sequences.
 
 Outputs per-sequence tracker results in MOTChallenge text format:
   <out_dir>/<seq_name>.txt
