@@ -1,0 +1,28 @@
+for win10:
+
+pytho_tracker_motchallenge.py `
+>>   --data "data\MOT20" `
+>>   --split train `
+>>   --tracker ".\object_tracker_pipeline.py" `
+>>   --out "results\MOT20_run_reid" `
+>>   --seq MOT20-01 MOT20-02 MOT20-03 MOT20-05 `
+>>   --osnet ".\osnet_x1_0_msmt17.pth"
+
+затем
+
+
+python scripts/eval_motchallenge.py `
+>>   --data "data\MOT20" `
+>>   --split train `
+>>   --res "results\MOT20_run_baseline" `       
+>>   --out-csv "results\MOT20_run_baseline\metrics.csv" `
+>>   --iou 0.5
+
+ИЛИ
+
+python scripts/eval_motchallenge.py `
+>>   --data "data\MOT20" `
+>>   --split train `
+>>   --res "results\MOT20_run_reid" `
+>>   --out-csv "results\MOT20_run_reid\metrics.csv" `
+>>   --iou 0.5 
