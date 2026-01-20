@@ -1,5 +1,5 @@
 .vscode/
 .idea/
 *.swp
-**/_pycache__
+**/__pycache__
 **/*.jpg
