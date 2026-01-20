@@ -7,6 +7,7 @@ def build_flow():
     g.attr("edge", fontname="Times New Roman", fontsize="10")
 
     # --- Верхний уровень кадра ---
+    g.node("init", "Начало", shape="oval")
     g.node("frame", "Входной кадр", shape="box")
     g.node("yolo", "Детекция YOLO\nNMS: det_conf, det_iou, imgsz", shape="box")
     g.node("filter", "Фильтрация детекций\nразрешённые классы, ROI, min высота", shape="box")
@@ -37,9 +38,11 @@ def build_flow():
 
     g.node("dedup", "Подавление дублей\nпо IoU >= dup_iou_thresh\nвыбор лучшего трека", shape="box")
 
-    g.node("out", "Конец\nТреки и маска использованных детекций", shape="box")
+    g.node("out", "Треки и маска использованных детекций", shape="box")
+    g.node("end", "Конец", shape="oval")
 
     # --- Рёбра верхнего уровня ---
+    g.edge("init", "frame")
     g.edge("frame", "yolo")
     g.edge("yolo", "filter")
     g.edge("filter", "reid_on")
@@ -70,6 +73,7 @@ def build_flow():
     g.edge("react_lost", "spawn")
     g.edge("spawn", "dedup")
     g.edge("dedup", "out")
+    g.edge("out", "end")
 
     return g
 
